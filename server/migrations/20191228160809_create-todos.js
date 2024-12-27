@@ -1,7 +1,7 @@
 
 exports.up = function(knex) {
     return knex.schema.createTable('todos', function(table) {
-        table.increments('id');
+        table.string('id').primary();
         table.string('title');
         table.integer('order');
         table.boolean('completed').defaultTo(false);

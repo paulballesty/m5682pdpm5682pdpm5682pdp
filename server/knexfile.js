@@ -4,6 +4,10 @@
   Knex also allows for easy switching between databases. 
   But the .returning() method will only work for PostgreSQL, MSSQL, and Oracle databases.
 */
+const { TextEncoder, TextDecoder } = require('util');
+
+Object.assign(global, { TextDecoder, TextEncoder });
+
 require('dotenv').config();
 module.exports = {
 

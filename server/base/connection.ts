@@ -2,4 +2,8 @@
 const environment = process.env.NODE_ENV || 'development';
 const config = require('../knexfile.js')[environment];
 
-module.exports = require('knex')(config);
+export const DEFAULT_LIMIT = 100;
+
+export function createDbConnection() {
+    return require('knex')(config)
+}
